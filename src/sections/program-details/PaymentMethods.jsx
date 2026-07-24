@@ -318,7 +318,7 @@ const PaymentMethods = ({ isFeatured }) => {
                     }}>
                         * نود إعلامكم أن رسوم التسجيل غير قابلة للاسترجاع بعد إتمام الدفع، إلا في حالات استثنائية خاصة. شكراً لتفهمكم.
                     </p>
-                    <a href={isFeatured ? "https://wa.me/212643354739" : "https://wa.me/212661491819"} target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+                    <a href="https://wa.me/212643354739" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
                         إرسال الوصل عبر الواتساب <span>→</span>
                     </a>
                 </div>
