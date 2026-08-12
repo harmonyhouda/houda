@@ -257,7 +257,7 @@ const PaymentMethods = ({ isFeatured }) => {
                             </div>
                             <div className="info-item">
                                 <span className="info-label">الاسم الكامل</span>
-                                <span className="info-value">{isFeatured ? "Rihab el kadmiri" : "ABAHMANE HOUDA"}</span>
+                                <span className="info-value">Rihab el kadmiri</span>
                             </div>
                             <div className="info-item">
                                 <span className="info-label">رقم الهاتف</span>
@@ -265,7 +265,7 @@ const PaymentMethods = ({ isFeatured }) => {
                             </div>
                             <div className="info-item">
                                 <span className="info-label">المدينة</span>
-                                <span className="info-value">{isFeatured ? "وجدة (Oujda)" : "طنجة (Tanger)"}</span>
+                                <span className="info-value">وجدة (Oujda)</span>
                             </div>
                         </div>
                     </div>
