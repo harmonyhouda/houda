@@ -261,7 +261,7 @@ const PaymentMethods = ({ isFeatured }) => {
                             </div>
                             <div className="info-item">
                                 <span className="info-label">رقم الهاتف</span>
-                                <span className="info-value">{isFeatured ? "0643354739" : "+212 661 491 819"}</span>
+                                <span className="info-value">+212 643-354739</span>
                             </div>
                             <div className="info-item">
                                 <span className="info-label">المدينة</span>
@@ -294,7 +294,7 @@ const PaymentMethods = ({ isFeatured }) => {
                             </div>
                             <div className="info-item">
                                 <span className="info-label">رقم الهاتف</span>
-                                <span className="info-value">+212 661 491 819</span>
+                                <span className="info-value">+212 643-354739</span>
                             </div>
                             <div className="info-item">
                                 <span className="info-label">المدينة</span>

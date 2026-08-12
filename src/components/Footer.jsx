@@ -52,9 +52,6 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4 className="footer-col-title">اتصال</h4>
                         <address className="footer-address">
-                            <a href="https://wa.me/212661491819" target="_blank" rel="noopener noreferrer" className="contact-link">
-                                <Phone size={14} /> +212 661-491819
-                            </a>
                             <a href="https://wa.me/212643354739" target="_blank" rel="noopener noreferrer" className="contact-link">
                                 <Phone size={14} /> +212 643-354739
                             </a>
