@@ -1,26 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Download, BookOpen, Sparkles } from 'lucide-react';
+import EmailCaptureModal from '../../components/EmailCaptureModal';
 
 const FreeBookletSection = () => {
-    const handleDownload = async (e) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleDownloadClick = (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('https://assets.houdaharmony.com/pdf/free-guide.pdf');
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Houda_Harmony_Free_Guide.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        } catch (error) {
-            console.error('Download error:', error);
-            window.open('https://assets.houdaharmony.com/pdf/free-guide.pdf', '_blank');
-        }
+        setIsModalOpen(true);
     };
 
     return (
@@ -98,7 +87,7 @@ const FreeBookletSection = () => {
                             <motion.a 
                                 href="https://assets.houdaharmony.com/pdf/free-guide.pdf" 
                                 download="Houda_Harmony_Free_Guide.pdf"
-                                onClick={handleDownload}
+                                onClick={handleDownloadClick}
                                 className="btn-premium-primary"
                                 aria-label="تحميل الكتيب المجاني بصيغة PDF"
                                 whileHover={{ scale: 1.02 }}
@@ -122,6 +111,15 @@ const FreeBookletSection = () => {
                     </div>
                 </div>
             </div>
+            
+            <EmailCaptureModal 
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                resourceName="دليلك العملي للتشافي الذاتي والوعي"
+                fileUrl="https://assets.houdaharmony.com/pdf/free-guide.pdf"
+                fileName="Houda_Harmony_Free_Guide.pdf"
+                listId={3} // معرف القائمة الافتراضي في Brevo للمسجلين عبر كتاب التشافي
+            />
         </section>
     );
 };

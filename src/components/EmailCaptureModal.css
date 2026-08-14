@@ -1,0 +1,304 @@
+/* ==========================================================================
+   EMAIL CAPTURE MODAL STYLES
+   ========================================================================== */
+
+.email-capture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(45, 18, 68, 0.7); /* لون بنفسجي غامق شفاف متناسق مع الموقع */
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    animation: captureFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    padding: 20px;
+}
+
+.email-capture-container {
+    position: relative;
+    background-color: var(--bg-light, #FBF9F6);
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -12px rgba(45, 18, 68, 0.2);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(220, 160, 17, 0.25); /* إطار ذهبي رقيق */
+    animation: captureScaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+}
+
+.email-capture-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(45, 18, 68, 0.06);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--purple-deep, #2D1244);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+.email-capture-close:hover {
+    background-color: var(--purple-deep, #2D1244);
+    color: var(--text-white, #FFFFFF);
+    transform: rotate(90deg);
+}
+
+.email-capture-content {
+    padding: 40px 32px;
+}
+
+/* Header styling */
+.email-capture-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.mail-icon-badge {
+    background-color: rgba(220, 160, 17, 0.1);
+    color: var(--gold-dark, #B5840B);
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border: 1px solid rgba(220, 160, 17, 0.15);
+}
+
+.email-capture-header h3 {
+    font-family: var(--font-serif, serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple-deep, #2D1244);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.email-capture-header p {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 14.5px;
+    color: var(--purple-royal, #3E1E5E);
+    line-height: 1.6;
+}
+
+/* Form inputs & submit */
+.email-capture-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.email-input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(62, 30, 94, 0.15);
+    background-color: var(--bg-white, #FFFFFF);
+    color: var(--purple-deep, #2D1244);
+    font-family: var(--font-sans, sans-serif);
+    font-size: 14.5px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.email-input:focus {
+    border-color: var(--gold-dark, #B5840B);
+    box-shadow: 0 0 0 4px rgba(220, 160, 17, 0.1);
+}
+
+/* Consent checkbox */
+.consent-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 4px;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.consent-checkbox {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold-dark, #B5840B); /* لون ذهبي للعلامة */
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.consent-text {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 12.5px;
+    color: var(--purple-royal, #3E1E5E);
+    line-height: 1.5;
+}
+
+/* Submit button */
+.email-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gold-shimmer, linear-gradient(135deg, #B5840B 0%, #DCA011 50%, #F4D068 100%));
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: var(--font-sans, sans-serif);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(181, 132, 11, 0.2);
+    margin-top: 8px;
+}
+
+.email-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(181, 132, 11, 0.3);
+}
+
+.email-submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.email-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Error message styling */
+.email-capture-error-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(220, 53, 69, 0.08);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: #DC3545;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 13.5px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+/* Success state styling */
+.email-capture-success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    color: #28A745;
+    margin-bottom: 20px;
+}
+
+.email-capture-success-state h3 {
+    font-family: var(--font-serif, serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--purple-deep, #2D1244);
+    margin-bottom: 12px;
+}
+
+.email-capture-success-state p {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 15px;
+    color: var(--purple-royal, #3E1E5E);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.success-subtext {
+    font-size: 12.5px;
+    color: #6C757D;
+}
+
+.success-link {
+    color: var(--gold-dark, #B5840B);
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.success-link:hover {
+    color: var(--purple-deep, #2D1244);
+}
+
+/* ==========================================================================
+   ANIMATIONS & MEDIA QUERIES
+   ========================================================================== */
+
+@keyframes captureFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes captureScaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .email-capture-container {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .email-capture-content {
+        padding: 32px 20px;
+    }
+
+    .email-capture-header h3 {
+        font-size: 19px;
+    }
+
+    .email-capture-header p {
+        font-size: 13.5px;
+    }
+
+    .email-input {
+        padding: 12px 14px;
+        font-size: 13.5px;
+    }
+
+    .consent-text {
+        font-size: 11.5px;
+    }
+}
