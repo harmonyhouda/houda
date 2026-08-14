@@ -71,18 +71,22 @@ const EmailCaptureModal = ({
     }
   };
 
-  const triggerDownload = () => {
+  const triggerDownload = async () => {
     try {
+      const response = await fetch(fileUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      
       const link = document.createElement('a');
-      link.href = fileUrl;
+      link.href = url;
       link.download = fileName || 'document.pdf';
-      link.target = '_blank'; // فتح نافذة جديدة في حال كان المتصفح يمنع التنزيل المباشر لبعض صيغ الملفات
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Trigger download error:', error);
-      // كحل احتياطي إذا فشل تنزيل JavaScript المباشر
+      // كحل احتياطي إذا فشل تنزيل الـ Blob (مثلاً بسبب مشكلة في CORS)
       window.open(fileUrl, '_blank');
     }
   };
