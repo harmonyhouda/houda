@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { X, MessageCircle, Gift } from 'lucide-react';
 
 const PromoPopup = () => {
+    // تشغيل / إيقاف العرض: غير القيمة إلى true لتفعيل العرض مجدداً على الموقع
+    const isPromoEnabled = false;
+
+    if (!isPromoEnabled) return null;
+
     const [isVisible, setIsVisible] = useState(false);
     const [showFloatingBadge, setShowFloatingBadge] = useState(false);
 
