@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { X, MessageCircle, Gift } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, MessageCircle, Sparkles } from 'lucide-react';
 
 const PromoPopup = () => {
-    // تشغيل / إيقاف العرض: غير القيمة إلى true لتفعيل العرض مجدداً على الموقع
-    const isPromoEnabled = false;
+    // تشغيل / إيقاف العرض: غير القيمة إلى true لتفعيل العرض على الموقع
+    const isPromoEnabled = true;
 
     if (!isPromoEnabled) return null;
 
@@ -45,8 +46,8 @@ const PromoPopup = () => {
                             {/* Image Section */}
                             <div className="promo-image-sec">
                                 <img 
-                                    src="/تخفيض.png" 
-                                    alt="خصم باقة الدورات" 
+                                    src="/رحلة تذكر.png" 
+                                    alt="رحلة تذكر" 
                                     className="promo-image"
                                     loading="lazy" 
                                 />
@@ -54,22 +55,26 @@ const PromoPopup = () => {
 
                             {/* Content Section */}
                             <div className="promo-content-sec">
-                                <span className="promo-badge">عرض خاص لفترة محدودة 🔥</span>
-                                <h3 className="promo-title">خصم استثنائي على باقة الدورات الشاملة</h3>
+                                <span className="promo-badge">🌸 رحلة روحانية أونلاين • لمدة شهرين</span>
+                                <h3 className="promo-title">هل تشعرين بالثقل أو التشتّت وسط ضجيج الحياة؟</h3>
                                 <p className="promo-desc">
-                                    استثمر في نفسك الآن مع باقة دوراتنا المتكاملة والمصممة خصيصاً لمساعدتك على تحقيق التوازن الذهني والروحي والعملي بأفضل سعر.
+                                    ماذا لو كانت هناك نسخة منكِ أكثر حرية، سلامًا وقربًا من حقيقتها؟
+                                    <br />
+                                    ليست نسخة جديدة… بل أنتِ قبل أن تُثقلكِ المخاوف والتجارب والتعلّقات.
+                                    <br />
+                                    <strong>«رحلة تذكّر»</strong> دورة أونلاين لمدة شهرين، للتحرّر من رواسب الماضي، واستعادة الأمان والعودة إلى نوركِ من جديد. ✨
                                 </p>
 
                                 <div className="promo-actions">
                                     <a 
-                                        href="https://wa.me/212643354739?text=مرحباً، أريد الاستفسار عن عرض خصم باقة الدورات" 
+                                        href="https://wa.me/212643354739?text=مرحباً، أريد الاستفسار عن تفاصيل رحلة تذكر وإمكانية الدفع على مرتين" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         className="promo-cta-btn"
                                         onClick={handleClose}
                                     >
                                         <MessageCircle size={18} />
-                                        <span>تواصل معنا للاشتراك والاستفسار</span>
+                                        <span>تواصل معنا لمعرفة تفاصيل الرحلة   </span>
                                     </a>
                                     <button className="promo-secondary-btn" onClick={handleClose}>
                                         تصفح الموقع أولاً
@@ -86,10 +91,10 @@ const PromoPopup = () => {
                 <button 
                     className="promo-floating-badge" 
                     onClick={handleOpen}
-                    aria-label="عرض خصم باقة الدورات"
+                    aria-label="عرض تفاصيل رحلة تذكر"
                 >
-                    <Gift size={20} className="promo-badge-icon" />
-                    <span className="promo-badge-text">خصم الباقة 🔥</span>
+                    <Sparkles size={20} className="promo-badge-icon" />
+                    <span className="promo-badge-text">رحلة تذكر ✨</span>
                 </button>
             )}
         </>

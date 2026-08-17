@@ -320,5 +320,30 @@
     }
 }
 
+.promo-dismiss-btn {
+    background: none;
+    border: none;
+    color: var(--purple-accent, #6C3E91);
+    font-size: 14px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 8px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    text-align: center;
+    align-self: center;
+}
+
+.promo-dismiss-btn:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.promo-dismiss-btn:active {
+    transform: translateY(0);
+}
+
 
 
