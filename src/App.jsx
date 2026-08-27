@@ -13,6 +13,7 @@ import FreeBookletPage from './pages/FreeBookletPage';
 import MeditationsPage from './pages/MeditationsPage';
 import MeditationDetailsPage from './pages/MeditationDetailsPage';
 import PromoPopup from './components/PromoPopup';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -31,6 +32,7 @@ function App() {
           <ScrollToTop />
           <Navbar />
           <PromoPopup />
+          <WhatsAppWidget />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
