@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Headphones, ShieldAlert } from 'lucide-react';
+import { ArrowRight, Clock, Headphones, ShieldAlert, Sparkles } from 'lucide-react';
 import meditationsData from '../data/meditations.json';
 
 const MeditationDetailsPage = () => {
@@ -162,6 +162,51 @@ const MeditationDetailsPage = () => {
                                 <p>رابط الفيديو غير صالح أو غير متوفر.</p>
                             </div>
                         )}
+                    </div>
+                </motion.div>
+
+                {/* Description and Instructions Grid */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="details-bottom-grid"
+                >
+                    {/* Description Card */}
+                    <div className="details-card-desc">
+                        <div className="card-header">
+                            <Sparkles size={20} className="card-header-icon" />
+                            <h3>عن التأمل</h3>
+                        </div>
+                        <p className="card-content-text">
+                            {meditation.description}
+                        </p>
+                    </div>
+
+                    {/* Instructions Card */}
+                    <div className="details-card-instructions">
+                        <div className="card-header">
+                            <Headphones size={20} className="card-header-icon" />
+                            <h3>إرشادات للاستماع</h3>
+                        </div>
+                        <ul className="instructions-list">
+                            <li>
+                                <span className="list-number">١</span>
+                                <span>اختر مكاناً هادئاً ومريحاً ومظلماً بشكل مريح لتجنب المقاطعات.</span>
+                            </li>
+                            <li>
+                                <span className="list-number">٢</span>
+                                <span>استخدم سماعات الأذن عالية الجودة لتجربة صوتية مجسمة وعميقة.</span>
+                            </li>
+                            <li>
+                                <span className="list-number">٣</span>
+                                <span>اجلس بوضعية مريحة مع الحفاظ على استقامة العمود الفقري.</span>
+                            </li>
+                            <li>
+                                <span className="list-number">٤</span>
+                                <span>تنفس بعمق ووعي، واسمح لجسدك بالاسترخاء مع الصوت الموجه.</span>
+                            </li>
+                        </ul>
                     </div>
                 </motion.div>
             </div>
@@ -360,6 +405,7 @@ const MeditationDetailsPage = () => {
                     font-size: 1.05rem;
                     color: rgba(45, 18, 68, 0.8);
                     line-height: 1.8;
+                    white-space: pre-line;
                 }
 
                 .instructions-list {

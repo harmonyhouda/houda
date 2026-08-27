@@ -123,6 +123,7 @@ const MeditationsPage = () => {
 
                                 <div className="card-body">
                                     <h3 className="card-meditation-title">{meditation.title}</h3>
+                                    <p className="card-meditation-desc">{meditation.description}</p>
                                     <div className="card-explore-btn">
                                         <span>ابدأ التأمل الآن</span>
                                         <span className="btn-arrow">←</span>
@@ -378,7 +379,12 @@ const MeditationsPage = () => {
                     color: rgba(45, 18, 68, 0.6);
                     line-height: 1.6;
                     margin-bottom: 20px;
-                    flex-grow: 1;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 4.8em; /* 3 lines * 1.6 line-height */
                 }
 
                 .card-explore-btn {
