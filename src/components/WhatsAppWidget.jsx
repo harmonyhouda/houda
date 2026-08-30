@@ -40,7 +40,7 @@ const WhatsAppWidget = () => {
         sessionStorage.setItem('whatsapp_greeting_closed', 'true');
     };
 
-    const whatsappUrl = "https://wa.me/212643354739?text=مرحباً هدى هارموني، أريد الاستفسار عن الدورات وجلسات الكوتشينغ المتاحة 🌸";
+    const whatsappUrl = "https://wa.me/212643354739?text=مرحباً فريق العمل، أريد الاستفسار عن الدورات وجلسات الكوتشينغ المتاحة 🌸";
 
     return (
         <div className="whatsapp-widget-container">
