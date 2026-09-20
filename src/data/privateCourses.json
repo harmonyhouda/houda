@@ -1,0 +1,26 @@
+[
+  {
+    "id": "vip-c01",
+    "accessKey": "taharrur-vip-8f",
+    "title": "دورة رحلة تذكر",
+    "subtitle": "البوابة الخاصة بالمشتركين // الحصص المسجلة",
+    "description": "أهلاً بكِ في مساحتكِ التعليمية الخاصة. يمكنكِ استعراض جميع حصص الدورة، ومشاهدتها بالترتيب مع إمكانية تحميل أوراق العمل ومتابعة نسبة إنجازكِ.",
+    "coverImage": "/التحرر والانتقال.jpg",
+    "lessons": [
+      {
+        "id": "l01",
+        "number": "01",
+        "title": "الحصة الأولى من دورة رحلة تذكر",
+        "duration": "ساعتين و 35 دقيقة",
+        "videoUrl": "https://player.mediadelivery.net/embed/757712/0dd3ddfd-69f0-4d3d-af07-53195f7da9db?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+      },
+      {
+        "id": "l02",
+        "number": "02",
+        "title": "الحصة الثانية من دورة رحلة تذكر",
+        "duration": "48 دقيقة",
+        "videoUrl": "https://player.mediadelivery.net/embed/757712/0dd3ddfd-69f0-4d3d-af07-53195f7da9db?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+      }
+    ]
+  }
+]

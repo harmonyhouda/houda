@@ -1,0 +1,688 @@
+/* ==========================================================================
+   VIP PRIVATE SESSION PORTAL — LIGHT HARMONY WITH DARK TEXTURE DOTS
+   Light, serene background with elegant dark stardust dots, 
+   gentle pastel auroras, and royal purple playlist header.
+   ========================================================================== */
+
+/* Main Container (Light Theme) */
+.private-light-dots-portal {
+  min-height: 100vh;
+  background: #FAF8F5;
+  color: var(--purple-deep);
+  font-family: var(--font-sans);
+  direction: rtl;
+  text-align: right;
+  position: relative;
+  overflow: visible;
+  clip-path: inset(0);
+  padding-bottom: 90px;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT BACKGROUND WITH DARK STARDUST DOTS & PASTEL AURORAS
+   -------------------------------------------------------------------------- */
+.ambient-dots-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: #FAF8F5;
+}
+
+/* Dark Stardust Dots on Light Canvas (النقط الداكنة في الخلفية الفاتحة) */
+.dark-dots-field {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.3px 1.3px at 20px 30px, rgba(45, 18, 68, 0.32), rgba(0, 0, 0, 0)),
+    radial-gradient(1.6px 1.6px at 45px 75px, rgba(108, 62, 145, 0.38), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 65px 160px, rgba(45, 18, 68, 0.28), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 95px 40px, rgba(108, 62, 145, 0.36), rgba(0, 0, 0, 0)),
+    radial-gradient(1.3px 1.3px at 135px 85px, rgba(45, 18, 68, 0.3), rgba(0, 0, 0, 0)),
+    radial-gradient(1.8px 1.8px at 165px 125px, rgba(108, 62, 145, 0.34), rgba(0, 0, 0, 0)),
+    radial-gradient(2.2px 2.2px at 195px 190px, rgba(45, 18, 68, 0.32), rgba(0, 0, 0, 0));
+  background-size: 200px 200px;
+  opacity: 0.85;
+}
+
+/* Soft Light Auroras */
+.light-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  animation: orb-drift 18s infinite alternate ease-in-out;
+}
+
+.aurora-gold {
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(220, 160, 17, 0.12), transparent 70%);
+  top: -10%;
+  right: -10%;
+}
+
+.aurora-purple {
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(108, 62, 145, 0.1), transparent 70%);
+  bottom: -20%;
+  left: -10%;
+  animation-delay: -9s;
+}
+
+@keyframes orb-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 70px) scale(1.06);
+  }
+}
+
+/* Floating Subtle Dark Particles (نقاط حية عائمة) */
+.floating-dark-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(108, 62, 145, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(108, 62, 145, 0.3);
+  animation: dark-particle-float 16s infinite linear;
+  pointer-events: none;
+}
+
+.p-1 {
+  top: 25%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.p-2 {
+  top: 45%;
+  right: 14%;
+  animation-delay: 3.5s;
+}
+
+.p-3 {
+  bottom: 25%;
+  left: 30%;
+  animation-delay: 7s;
+}
+
+.p-4 {
+  bottom: 15%;
+  right: 20%;
+  animation-delay: 10.5s;
+}
+
+@keyframes dark-particle-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-260px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Content Wrapper & Layout
+   -------------------------------------------------------------------------- */
+.portal-content-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 24px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar: Course Title + Lesson Tag
+   -------------------------------------------------------------------------- */
+.portal-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(45, 18, 68, 0.08);
+  border-radius: 999px;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 46px;
+  box-shadow: 0 4px 18px rgba(45, 18, 68, 0.03);
+}
+
+.portal-bar-course-title {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--purple-deep);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.portal-course-crumb {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.crumb-lesson-tag {
+  color: var(--gold-dark);
+  background: rgba(220, 160, 17, 0.14);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Lesson Header
+   -------------------------------------------------------------------------- */
+.portal-lesson-header {
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(45, 18, 68, 0.08);
+}
+
+.portal-lesson-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--purple-deep);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.portal-lesson-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #6c5c7d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.meta-badge-tag {
+  background: rgba(45, 18, 68, 0.06);
+  color: var(--purple-deep);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.meta-separator {
+  color: #c9bed4;
+}
+
+/* --------------------------------------------------------------------------
+   Main Grid Layout: Video Column (Left) + Playlist Sidebar (Right)
+   -------------------------------------------------------------------------- */
+.portal-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px 32px;
+}
+
+.portal-player-block {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.portal-sidebar-col {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.portal-info-card {
+  grid-column: 1;
+  grid-row: 2;
+  background: rgba(220, 160, 17, 0.07);
+  border: 1px solid rgba(220, 160, 17, 0.25);
+  border-right: 4px solid var(--gold);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 18px rgba(45, 18, 68, 0.02);
+}
+
+/* --------------------------------------------------------------------------
+   Video Player Card
+   -------------------------------------------------------------------------- */
+.portal-player-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(220, 160, 17, 0.3);
+  box-shadow: 0 16px 40px rgba(45, 18, 68, 0.08);
+  user-select: none;
+}
+
+.portal-player-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #110519;
+}
+
+.portal-player-iframe,
+.portal-player-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.portal-player-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Step Controls Bar (Previous / Next Lesson)
+   -------------------------------------------------------------------------- */
+.portal-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid rgba(45, 18, 68, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(45, 18, 68, 0.03);
+  flex-wrap: wrap;
+}
+
+.portal-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FAF8F5;
+  color: var(--purple-deep);
+  border: 1px solid rgba(45, 18, 68, 0.1);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.portal-step-btn:hover:not(:disabled) {
+  background: var(--purple-deep);
+  border-color: var(--purple-deep);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 18, 68, 0.15);
+}
+
+.portal-step-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar Playlist (Curriculum)
+   -------------------------------------------------------------------------- */
+.portal-sidebar-card {
+  background: #ffffff;
+  border: 1px solid rgba(45, 18, 68, 0.08);
+  box-shadow: 0 10px 30px rgba(45, 18, 68, 0.04);
+  border-radius: 20px;
+  overflow: hidden;
+  position: sticky;
+  top: 40px;
+}
+
+/* Purple Gradient Header (كما طُلِب: باللون البنفسجي) */
+.portal-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-accent) 100%);
+  color: #ffffff;
+}
+
+.portal-sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.portal-sidebar-title svg {
+  color: #ffffff;
+}
+
+.portal-sidebar-count {
+  font-size: 0.82rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.portal-curriculum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.portal-curriculum-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #FAF8F5;
+  border: 1px solid rgba(45, 18, 68, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: right;
+  width: 100%;
+}
+
+.portal-curriculum-item:hover {
+  background: #ffffff;
+  border-color: rgba(108, 62, 145, 0.3);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 14px rgba(45, 18, 68, 0.05);
+}
+
+/* Active Playing Lesson Highlight */
+.portal-curriculum-item.active {
+  background: #F3EAFB;
+  border-color: var(--purple-accent);
+  box-shadow: 0 4px 18px rgba(108, 62, 145, 0.16);
+}
+
+.portal-curriculum-item.active:hover {
+  background: #EFE4FA;
+  border-color: var(--purple-deep);
+}
+
+.portal-item-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.portal-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  color: var(--purple-deep);
+  border: 1px solid rgba(45, 18, 68, 0.08);
+  transition: all 0.25s ease;
+}
+
+.portal-curriculum-item.active .portal-item-icon {
+  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-accent) 100%);
+  color: #ffffff;
+  border-color: var(--purple-accent);
+  box-shadow: 0 3px 10px rgba(108, 62, 145, 0.3);
+}
+
+.portal-item-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.portal-item-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--purple-deep);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portal-item-duration {
+  font-size: 0.78rem;
+  color: #7a6b8a;
+}
+
+.portal-curriculum-item.active .portal-item-title {
+  color: var(--purple-deep);
+  font-weight: 800;
+}
+
+.portal-curriculum-item.active .portal-item-duration {
+  color: var(--purple-accent);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Guidance Notes Box
+   -------------------------------------------------------------------------- */
+
+.portal-notes-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.portal-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portal-notes-list li {
+  position: relative;
+  padding-right: 18px;
+  color: #3e2652;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.portal-notes-list li::before {
+  content: '•';
+  position: absolute;
+  right: 0;
+  color: var(--gold-dark);
+  font-size: 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Error State (Invalid Secret Key)
+   -------------------------------------------------------------------------- */
+.private-error-portal-light {
+  min-height: 100vh;
+  background: #FAF8F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.zen-error-page {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 36px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(220, 160, 17, 0.35);
+  box-shadow: 0 20px 50px rgba(45, 18, 68, 0.08);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.zen-error-icon {
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.zen-error-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--purple-deep);
+  margin-bottom: 12px;
+}
+
+.zen-error-text {
+  font-size: 1rem;
+  color: #635272;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.zen-error-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--purple-deep);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zen-error-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 18, 68, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .portal-main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .portal-player-block {
+    order: 1;
+  }
+
+  .portal-sidebar-col {
+    order: 2; /* Sidebar shows before info card on tablets/mobile */
+  }
+
+  .portal-info-card {
+    order: 3;
+  }
+
+  .portal-sidebar-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal-content-container {
+    padding: 100px 18px 40px;
+  }
+
+  .portal-top-bar {
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    min-height: 42px;
+    gap: 12px;
+  }
+
+  .portal-bar-course-title {
+    font-size: 0.86rem;
+    max-width: 75%;
+  }
+
+  .crumb-lesson-tag {
+    padding: 3px 10px;
+    font-size: 0.78rem;
+  }
+
+  .portal-lesson-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-content-container {
+    padding: 92px 14px 30px;
+  }
+
+  .portal-top-bar {
+    padding: 5px 12px;
+    min-height: 40px;
+    gap: 8px;
+  }
+
+  .portal-bar-course-title {
+    font-size: 0.8rem;
+    max-width: 70%;
+  }
+
+  .crumb-lesson-tag {
+    padding: 2px 8px;
+    font-size: 0.74rem;
+  }
+
+  .portal-lesson-title {
+    font-size: 1.35rem;
+  }
+}

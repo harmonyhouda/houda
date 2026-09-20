@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
 import './WhatsAppWidget.css';
 
 const WhatsAppWidget = () => {
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const [showGreeting, setShowGreeting] = useState(false);
 
@@ -41,6 +43,11 @@ const WhatsAppWidget = () => {
     };
 
     const whatsappUrl = "https://wa.me/212643354739?text=مرحباً فريق العمل، أريد الاستفسار عن الدورات وجلسات الكوتشينغ المتاحة 🌸";
+
+    // Don't render WhatsApp widget on private course routes
+    if (location.pathname.startsWith('/vip-session')) {
+        return null;
+    }
 
     return (
         <div className="whatsapp-widget-container">
