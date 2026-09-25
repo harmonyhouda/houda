@@ -20,6 +20,13 @@
         "title": "الحصة الثانية من دورة رحلة تذكر",
         "duration": "3 ساعات و 35 دقيقة",
         "videoUrl": "https://player.mediadelivery.net/embed/757712/7a1515f6-54d1-477b-8e01-5b42bf8097a1?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+      },
+      {
+        "id": "l03",
+        "number": "03",
+        "title": "الحصة الثالثة من دورة رحلة تذكر",
+        "duration": "",
+        "videoUrl": "https://player.mediadelivery.net/embed/757712/7a887950-dd68-411e-8b2f-1bfb97e2d3c8?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
       }
     ]
   }
