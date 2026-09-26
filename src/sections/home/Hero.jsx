@@ -52,7 +52,7 @@ const Hero = () => {
           className="zenith-portrait-container"
         >
           <div className="portrait-glow"></div>
-          <img src="/hom.png" className="zenith-img" alt="Houda Abahman" />
+          <img src="/hom.jpeg" className="zenith-img" alt="Houda Abahman" />
         </motion.div>
 
         <motion.div
@@ -68,7 +68,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 variants={revealVariants} className="zenith-title">
-            <span className="z-main"> هدى ابـحمان</span>
+            <span className="z-main"> من هنا تبدأ رحلتك </span>
             <span className="z-sub"> رحلتك نحو السلام الداخلي تبدأ هنا</span>
           </motion.h1>
 
