@@ -3,7 +3,7 @@ import { X, Sparkles } from 'lucide-react';
 
 const PromoPopup = () => {
     // تشغيل / إيقاف العرض: غير القيمة إلى true لتفعيل العرض على الموقع
-    const isPromoEnabled = true;
+    const isPromoEnabled = false;
 
     if (!isPromoEnabled) return null;
 
