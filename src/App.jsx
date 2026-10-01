@@ -13,6 +13,7 @@ import FreeBookletPage from './pages/FreeBookletPage';
 import MeditationsPage from './pages/MeditationsPage';
 import MeditationDetailsPage from './pages/MeditationDetailsPage';
 import PrivateCoursePage from './pages/PrivateCoursePage';
+import FreeCoursePage from './pages/FreeCoursePage';
 import PromoPopup from './components/PromoPopup';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import { Analytics } from '@vercel/analytics/react';
@@ -44,6 +45,7 @@ function App() {
             <Route path="/meditations" element={<MeditationsPage />} />
             <Route path="/meditations/:slug" element={<MeditationDetailsPage />} />
             <Route path="/vip-session/:accessKey" element={<PrivateCoursePage />} />
+            <Route path="/free-course" element={<FreeCoursePage />} />
           </Routes>
           <Footer />
         </div>

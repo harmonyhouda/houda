@@ -131,6 +131,14 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link
+                            to="/free-course"
+                            className={location.pathname === '/free-course' ? 'active' : ''}
+                        >
+                            كورس مجاني
+                        </Link>
+                    </li>
+                    <li>
                         {isHome ? (
                             <a
                                 href="#testimonials"
@@ -185,6 +193,7 @@ const Navbar = () => {
                         <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>الخدمات</Link></li>
                         <li><Link to="/meditations" onClick={() => setIsMobileMenuOpen(false)}>تأملات</Link></li>
                         <li><Link to="/free-guide" onClick={() => setIsMobileMenuOpen(false)}>كتيب مجاني</Link></li>
+                        <li><Link to="/free-course" onClick={() => setIsMobileMenuOpen(false)} >كورس مجاني</Link></li>
                         <li>
                             {isHome ? (
                                 <a href="#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')}>آراء الناس</a>

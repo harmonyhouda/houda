@@ -39,7 +39,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px; /* Adjusted height for a cleaner look */
+    height: 100px;
+    /* Adjusted height for a cleaner look */
 }
 
 .logo {
@@ -51,7 +52,8 @@
 }
 
 .logo-img {
-    height: 100%; /* Fill the container height perfectly */
+    height: 100%;
+    /* Fill the container height perfectly */
     width: auto;
     object-fit: contain;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -59,7 +61,8 @@
 }
 
 .navbar.scrolled .logo-img {
-    height: 80%; /* Slightly smaller when scrolled for elegance */
+    height: 80%;
+    /* Slightly smaller when scrolled for elegance */
 }
 
 .navbar.scrolled .nav-container {
