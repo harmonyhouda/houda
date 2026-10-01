@@ -69,7 +69,7 @@ const Hero = () => {
 
           <motion.h1 variants={revealVariants} className="zenith-title">
             <span className="z-main"> من هنا تبدأ رحلتك </span>
-            <span className="z-sub"> رحلتك نحو السلام الداخلي تبدأ هنا</span>
+            <span className="z-sub">  نحو  عالمك الحقيقي و السلام الداخلي</span> 
           </motion.h1>
 
           <motion.p variants={revealVariants} className="zenith-desc">

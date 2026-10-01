@@ -266,6 +266,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -276,6 +277,7 @@
         transform: scale(0.95);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -324,6 +326,7 @@
         transform: translateY(100px) scale(0.8);
         opacity: 0;
     }
+
     to {
         transform: translateY(0) scale(1);
         opacity: 1;
@@ -331,9 +334,12 @@
 }
 
 @keyframes badgePulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 10px 25px rgba(181, 132, 11, 0.35);
     }
+
     50% {
         box-shadow: 0 10px 30px rgba(181, 132, 11, 0.6);
     }
@@ -363,6 +369,3 @@
 .promo-dismiss-btn:active {
     transform: translateY(0);
 }
-
-
-
