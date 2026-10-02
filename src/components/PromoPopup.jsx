@@ -55,7 +55,7 @@ const PromoPopup = () => {
 
                             {/* Content Section */}
                             <div className="promo-content-sec">
-                                <span className="promo-badge">✨ برنامج جديد • رحلة وعي و تغيير  لمدة 4 أشهر</span>
+                                <span className="promo-badge">✨ برنامج جديد •رحلة تحول و خلق الواقع  لمدة 4 أشهر</span>
                                 <h3 className="promo-title">جاهزة تـخـرجـي مـن نـفـس السيناريو… وتـخـلـقـي واقعًا يـشـبـهـك؟</h3>
                                 <p className="promo-desc">
                                     4 أشهر من الوعي والتحرر والاستحقاق والظهور والمال… وصولًا لهوية جديدة وواقع تختارينه بوعي، داخل مجموعة خاصة ومحدودة بمتابعة قريبة.                                </p>
