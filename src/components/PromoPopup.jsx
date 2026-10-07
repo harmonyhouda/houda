@@ -10,6 +10,30 @@ const PromoPopup = () => {
 
     const [isVisible, setIsVisible] = useState(false);
     const [showFloatingBadge, setShowFloatingBadge] = useState(false);
+    const [activeTab, setActiveTab] = useState('workshop'); // 'workshop' or 'journey'
+
+    const programsData = {
+        workshop: {
+            image: '/شفاء الماضي نسخة 2.png',
+            alt: 'ورشة شفاء الماضي — النسخة الثانية',
+            badge: 'ورشة شفاء الماضي • 31 أكتوبر',
+            title: 'ورشة شفاء الماضي — النسخة الثانية',
+            desc: 'مساحة للتصالح مع نفسك، التخفف من التأنيب والعار وجلد الذات، والعودة لحاضرك بوعي أخف ونظرة جديدة. 🎁 هدايا خاصة مع Ticket VIP ',
+            link: '/program-details/ورشة-شفاء-الماضي-النسخة-الثانية',
+            btnText: 'اكتشفي تفاصيل الورشة والتذاكر'
+        },
+        journey: {
+            image: '/رحلة وعي وخلق الواقع.png',
+            alt: 'رحلة وعي وخلق الواقع — 4 أشهر',
+            badge: '✨ برنامج متكامل • 4 أشهر بمتابعة قريبة',
+            title: 'جاهزة تـخـرجـي مـن نـفـس السيناريو… وتـخـلـقـي واقعًا يـشـبـهـك؟',
+            desc: '4 أشهر من الوعي والتحرر والاستحقاق والظهور والمال… وصولًا لهوية جديدة وواقع تختارينه بوعي داخل مجموعة خاصة ومحدودة.',
+            link: '/program-details/رحلة-وعي-وخلق-الواقع',
+            btnText: 'اكتشفي تفاصيل البرنامج'
+        }
+    };
+
+    const currentProgram = programsData[activeTab];
 
     useEffect(() => {
         // Show the popup after a 2-second delay
@@ -46,27 +70,51 @@ const PromoPopup = () => {
                             {/* Image Section */}
                             <div className="promo-image-sec">
                                 <img 
-                                    src="/رحلة وعي وخلق الواقع.png" 
-                                    alt="جلسة تحرر من المشاعر السلبية وشفاء للطفل الداخلي" 
+                                    src={currentProgram.image} 
+                                    alt={currentProgram.alt} 
                                     className="promo-image"
+                                    key={activeTab}
                                     loading="eager" 
                                 />
                             </div>
 
                             {/* Content Section */}
                             <div className="promo-content-sec">
-                                <span className="promo-badge">✨ برنامج جديد •رحلة تحول و خلق الواقع  لمدة 4 أشهر</span>
-                                <h3 className="promo-title">جاهزة تـخـرجـي مـن نـفـس السيناريو… وتـخـلـقـي واقعًا يـشـبـهـك؟</h3>
+                                {/* Segmented Choice Tabs */}
+                                <div className="promo-nav-tabs" role="tablist">
+                                    <button 
+                                        type="button"
+                                        role="tab"
+                                        aria-selected={activeTab === 'workshop'}
+                                        className={`promo-nav-tab ${activeTab === 'workshop' ? 'active' : ''}`}
+                                        onClick={() => setActiveTab('workshop')}
+                                    >
+                                        <span>⚡ ورشة 31 أكتوبر</span>
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        role="tab"
+                                        aria-selected={activeTab === 'journey'}
+                                        className={`promo-nav-tab ${activeTab === 'journey' ? 'active' : ''}`}
+                                        onClick={() => setActiveTab('journey')}
+                                    >
+                                        <span>✨ برنامج الـ 4 أشهر</span>
+                                    </button>
+                                </div>
+
+                                <span className="promo-badge">{currentProgram.badge}</span>
+                                <h3 className="promo-title">{currentProgram.title}</h3>
                                 <p className="promo-desc">
-                                    4 أشهر من الوعي والتحرر والاستحقاق والظهور والمال… وصولًا لهوية جديدة وواقع تختارينه بوعي، داخل مجموعة خاصة ومحدودة بمتابعة قريبة.                                </p>
+                                    {currentProgram.desc}
+                                </p>
 
                                 <div className="promo-actions">
                                     <Link 
-                                        to="/program-details/رحلة-وعي-وخلق-الواقع" 
+                                        to={currentProgram.link} 
                                         className="promo-cta-btn"
                                         onClick={handleClose}
                                     >
-                                        <span>اكتشفي تفاصيل البرنامج</span>
+                                        <span>{currentProgram.btnText}</span>
                                         <ArrowLeft size={18} />
                                     </Link>
                                     <button className="promo-secondary-btn" onClick={handleClose}>
@@ -84,10 +132,10 @@ const PromoPopup = () => {
                 <button 
                     className="promo-floating-badge" 
                     onClick={handleOpen}
-                    aria-label="عرض تفاصيل البرنامج الجديد"
+                    aria-label="عرض برامج وورشات هدى الدقاق"
                 >
                     <Sparkles size={20} className="promo-badge-icon" />
-                    <span className="promo-badge-text">تفاصيل البرنامج الجديد ✨</span>
+                    <span className="promo-badge-text">الورشات والبرامج الحالية ✨</span>
                 </button>
             )}
         </>

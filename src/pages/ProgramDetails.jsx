@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProgramHero from '../sections/program-details/ProgramHero';
 import ProgramCurriculum from '../sections/program-details/ProgramCurriculum';
+import ProgramTickets from '../sections/program-details/ProgramTickets';
 import Testimonials from '../sections/home/Testimonials';
 import PaymentMethods from '../sections/program-details/PaymentMethods';
 
@@ -26,8 +27,9 @@ const ProgramDetails = () => {
 
     return (
         <main className="program-details-page">
-            <ProgramHero data={data.hero} />
+            <ProgramHero data={data.hero} tickets={data.tickets} />
             <ProgramCurriculum data={data.curriculum} />
+            {data.tickets && <ProgramTickets tickets={data.tickets} />}
             <Testimonials isCompact={true} />
             <PaymentMethods isFeatured={data.isFeatured} />
         </main>

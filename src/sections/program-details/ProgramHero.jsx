@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const ProgramHero = ({ data }) => {
+const ProgramHero = ({ data, tickets }) => {
     return (
         <section className="hero-zenith" style={{ minHeight: '80vh', paddingTop: '160px' }}>
             <div className="liquid-container">
@@ -81,9 +81,18 @@ const ProgramHero = ({ data }) => {
                         </div>
                         <div className="l-info-divider"></div>
                         <div className="l-info-item" style={{ textAlign: 'center', flex: 1, minWidth: 'fit-content' }}>
-                            <span className="li-label">السعر</span>
+                            <span className="li-label">التذاكر والاستثمار</span>
                             <span className="li-value" style={{ display: 'block', whiteSpace: 'nowrap' }}>
-                                {data.stats.price.includes('|') ? (
+                                {tickets && tickets.length > 0 ? (
+                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+                                        <span style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '1.25rem' }}>
+                                            تذكرتان: Standard & VIP
+                                        </span>
+                                        <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--purple-deep)', opacity: 0.9 }}>
+                                            ابتداءً من 290 DH (29€)
+                                        </span>
+                                    </div>
+                                ) : data.stats.price.includes('|') ? (
                                     (() => {
                                         const [promoPart, originalPart] = data.stats.price.split('|');
                                         const promoDH = promoPart.includes('DH') ? promoPart.split('DH')[0].trim() : promoPart.trim();
@@ -127,8 +136,8 @@ const ProgramHero = ({ data }) => {
                     </div>
 
                     <div className="hero-action" style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                        <a href="#payment-section" className="btn-register">
-                            سجلي الآن: طرق الدفع <span>←</span>
+                        <a href={tickets && tickets.length > 0 ? "#tickets-section" : "#payment-section"} className="btn-register">
+                            {tickets && tickets.length > 0 ? "اختاري تذكرتك وسجلي الآن ←" : "سجلي الآن: طرق الدفع ←"}
                         </a>
                     </div>
                 </motion.div>

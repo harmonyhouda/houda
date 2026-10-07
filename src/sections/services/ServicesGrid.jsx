@@ -31,7 +31,8 @@ const ALL_SERVICES = rawServices
     image: item.hero.image,
     category: item.category,
     price: item.hero.stats.price,
-    location: item.hero.stats.format
+    location: item.hero.stats.format,
+    hasTickets: !!(item.tickets && item.tickets.length > 0)
   }));
 
 const FILTERS = [
@@ -81,7 +82,9 @@ const ServiceCard = ({ service }) => (
 
       <div className="card-footer-wrap">
         <div className="card-price-tag" style={{ alignItems: 'flex-start', textAlign: 'right' }}>
-            <span className="price-label">الاستثمار:</span>
+            <span className="price-label">
+                {service.hasTickets ? 'الاستثمار (ابتداءً من):' : 'الاستثمار:'}
+            </span>
             <div className="price-stack" style={{ direction: 'ltr', textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                 {service.price.includes('|') ? (
                     (() => {
@@ -117,8 +120,8 @@ const ServiceCard = ({ service }) => (
                     })()
                 ) : service.price.includes('DH') && service.price.split('DH').length === 2 ? (
                     <>
-                        <span className="price-amount" style={{ fontSize: '1.4rem' }}>{service.price.split('DH')[0]} DH</span>
-                        <span className="price-amount-secondary" style={{ color: 'var(--gold)', fontSize: '0.9rem', fontWeight: 600, opacity: 0.8, display: 'block', marginTop: '2px' }}>{service.price.split('DH')[1]}</span>
+                        <span className="price-amount" style={{ fontSize: '1.4rem' }}>{service.price.split('DH')[0].trim()} DH</span>
+                        <span className="price-amount-secondary" style={{ color: 'var(--gold)', fontSize: '0.9rem', fontWeight: 600, opacity: 0.8, display: 'block', marginTop: '2px' }}>{service.price.split('DH')[1].trim()}</span>
                     </>
                 ) : (
                     <span className="price-amount">{service.price}</span>
