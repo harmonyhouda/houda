@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ReactLenis } from 'lenis/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -45,7 +45,9 @@ function App() {
             <Route path="/meditations" element={<MeditationsPage />} />
             <Route path="/meditations/:slug" element={<MeditationDetailsPage />} />
             <Route path="/vip-session/:accessKey" element={<PrivateCoursePage />} />
-            <Route path="/free-course" element={<FreeCoursePage />} />
+            {/* تم تعطيل صفحة الكورس المجاني: إذا فتح أي شخص الرابط يتم تحويله للرئيسية */}
+            <Route path="/free-course" element={<Navigate to="/" replace />} />
+            {/* لإعادة تفعيل الصفحة لاحقاً، استبدل السطر السابق بـ: <Route path="/free-course" element={<FreeCoursePage />} /> */}
           </Routes>
           <Footer />
         </div>

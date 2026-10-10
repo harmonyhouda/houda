@@ -130,6 +130,7 @@ const Navbar = () => {
                             كتيب مجاني
                         </Link>
                     </li>
+                    {/* تم إخفاء رابط الكورس المجاني مؤقتاً
                     <li>
                         <Link
                             to="/free-course"
@@ -138,6 +139,7 @@ const Navbar = () => {
                             كورس مجاني
                         </Link>
                     </li>
+                    */}
                     <li>
                         {isHome ? (
                             <a
@@ -193,7 +195,7 @@ const Navbar = () => {
                         <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>الخدمات</Link></li>
                         <li><Link to="/meditations" onClick={() => setIsMobileMenuOpen(false)}>تأملات</Link></li>
                         <li><Link to="/free-guide" onClick={() => setIsMobileMenuOpen(false)}>كتيب مجاني</Link></li>
-                        <li><Link to="/free-course" onClick={() => setIsMobileMenuOpen(false)} >كورس مجاني</Link></li>
+                        {/* تم إخفاء رابط الكورس المجاني للجوال: <li><Link to="/free-course" onClick={() => setIsMobileMenuOpen(false)} >كورس مجاني</Link></li> */}
                         <li>
                             {isHome ? (
                                 <a href="#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')}>آراء الناس</a>
