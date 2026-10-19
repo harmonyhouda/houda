@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ProgramCurriculum = ({ data }) => {
+    if (!data || !data.items || data.items.length === 0) return null;
+
     return (
         <section className="about-avant-garde">
             <div className="mesh-orb orb-1"></div>

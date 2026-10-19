@@ -28,7 +28,7 @@ const ProgramDetails = () => {
     return (
         <main className="program-details-page">
             <ProgramHero data={data.hero} tickets={data.tickets} />
-            <ProgramCurriculum data={data.curriculum} />
+            {data.curriculum && <ProgramCurriculum data={data.curriculum} />}
             {data.tickets && <ProgramTickets tickets={data.tickets} />}
             <Testimonials isCompact={true} />
             <PaymentMethods isFeatured={data.isFeatured} />

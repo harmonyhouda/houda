@@ -107,7 +107,7 @@ const NextProgram = () => {
                                     className={`lumine-tab-btn ${selectedIdx === index ? 'active' : ''}`}
                                 >
                                     {selectedIdx === index && <span className="tab-dot" />}
-                                    <span>{c.hero.title}</span>
+                                    <span>{c.hero.tabLabel || c.hero.title}</span>
                                 </button>
                             ))}
                         </div>
