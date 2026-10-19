@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ProgramHero = ({ data, tickets }) => {
+    const whatsappNumber = "212643354739";
+    const defaultMsg = encodeURIComponent(`السلام عليكم كوتش هدى، أود الاستفسار والتسجيل في: ${data.title}`);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMsg}`;
+
     return (
         <section className="hero-zenith" style={{ minHeight: '80vh', paddingTop: '160px' }}>
             <div className="liquid-container">
@@ -136,9 +140,20 @@ const ProgramHero = ({ data, tickets }) => {
                     </div>
 
                     <div className="hero-action" style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                        <a href={tickets && tickets.length > 0 ? "#tickets-section" : "#payment-section"} className="btn-register">
-                            {tickets && tickets.length > 0 ? "اختاري تذكرتك وسجلي الآن ←" : "سجلي الآن: طرق الدفع ←"}
-                        </a>
+                        {tickets && tickets.length > 0 ? (
+                            <a href="#tickets-section" className="btn-register">
+                                اختاري تذكرتك وسجلي الآن ←
+                            </a>
+                        ) : (
+                            <a 
+                                href={data.customLink || whatsappUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="btn-register"
+                            >
+                                {data.btnText || "احجزي مقعدكِ عبر واتساب ←"}
+                            </a>
+                        )}
                     </div>
                 </motion.div>
 
