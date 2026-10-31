@@ -10,30 +10,16 @@ const PromoPopup = () => {
 
     const [isVisible, setIsVisible] = useState(false);
     const [showFloatingBadge, setShowFloatingBadge] = useState(false);
-    const [activeTab, setActiveTab] = useState('workshop'); // 'workshop' or 'journey'
 
-    const programsData = {
-        workshop: {
-            image: '/شفاء الماضي نسخة 2.png',
-            alt: 'ورشة شفاء الماضي — النسخة الثانية',
-            badge: 'ورشة شفاء الماضي • 31 أكتوبر',
-            title: 'ورشة شفاء الماضي — النسخة الثانية',
-            desc: 'مساحة للتصالح مع نفسك، التخفف من التأنيب والعار وجلد الذات، والعودة لحاضرك بوعي أخف ونظرة جديدة. 🎁 هدايا خاصة مع Ticket VIP ',
-            link: '/program-details/ورشة-شفاء-الماضي-النسخة-الثانية',
-            btnText: 'اكتشفي تفاصيل الورشة والتذاكر'
-        },
-        journey: {
-            image: '/رحلة وعي وخلق الواقع.png',
-            alt: 'رحلة وعي وخلق الواقع — 4 أشهر',
-            badge: '✨ برنامج متكامل • 4 أشهر بمتابعة قريبة',
-            title: 'جاهزة تـخـرجـي مـن نـفـس السيناريو… وتـخـلـقـي واقعًا يـشـبـهـك؟',
-            desc: '4 أشهر من الوعي والتحرر والاستحقاق والظهور والمال… وصولًا لهوية جديدة وواقع تختارينه بوعي داخل مجموعة خاصة ومحدودة.',
-            link: '/program-details/رحلة-وعي-وخلق-الواقع',
-            btnText: 'اكتشفي تفاصيل البرنامج'
-        }
+    const program = {
+        image: '/رحلة وعي وخلق الواقع.png',
+        alt: 'رحلة وعي وخلق الواقع — 4 أشهر',
+        badge: '✨ برنامج متكامل • 4 أشهر بمتابعة قريبة',
+        title: 'جاهزة تـخـرجـي مـن نـفـس السيناريو… وتـخـلـقـي واقعًا يـشـبـهـك؟',
+        desc: '4 أشهر من الوعي والتحرر والاستحقاق والظهور والمال… وصولًا لهوية جديدة وواقع تختارينه بوعي داخل مجموعة خاصة ومحدودة.',
+        link: '/program-details/رحلة-وعي-وخلق-الواقع',
+        btnText: 'اكتشفي تفاصيل البرنامج'
     };
-
-    const currentProgram = programsData[activeTab];
 
     useEffect(() => {
         // Show the popup after a 2-second delay
@@ -70,51 +56,28 @@ const PromoPopup = () => {
                             {/* Image Section */}
                             <div className="promo-image-sec">
                                 <img 
-                                    src={currentProgram.image} 
-                                    alt={currentProgram.alt} 
+                                    src={program.image} 
+                                    alt={program.alt} 
                                     className="promo-image"
-                                    key={activeTab}
                                     loading="eager" 
                                 />
                             </div>
 
                             {/* Content Section */}
                             <div className="promo-content-sec">
-                                {/* Segmented Choice Tabs */}
-                                <div className="promo-nav-tabs" role="tablist">
-                                    <button 
-                                        type="button"
-                                        role="tab"
-                                        aria-selected={activeTab === 'workshop'}
-                                        className={`promo-nav-tab ${activeTab === 'workshop' ? 'active' : ''}`}
-                                        onClick={() => setActiveTab('workshop')}
-                                    >
-                                        <span>⚡ ورشة 31 أكتوبر</span>
-                                    </button>
-                                    <button 
-                                        type="button"
-                                        role="tab"
-                                        aria-selected={activeTab === 'journey'}
-                                        className={`promo-nav-tab ${activeTab === 'journey' ? 'active' : ''}`}
-                                        onClick={() => setActiveTab('journey')}
-                                    >
-                                        <span>✨ برنامج الـ 4 أشهر</span>
-                                    </button>
-                                </div>
-
-                                <span className="promo-badge">{currentProgram.badge}</span>
-                                <h3 className="promo-title">{currentProgram.title}</h3>
+                                <span className="promo-badge">{program.badge}</span>
+                                <h3 className="promo-title">{program.title}</h3>
                                 <p className="promo-desc">
-                                    {currentProgram.desc}
+                                    {program.desc}
                                 </p>
 
                                 <div className="promo-actions">
                                     <Link 
-                                        to={currentProgram.link} 
+                                        to={program.link} 
                                         className="promo-cta-btn"
                                         onClick={handleClose}
                                     >
-                                        <span>{currentProgram.btnText}</span>
+                                        <span>{program.btnText}</span>
                                         <ArrowLeft size={18} />
                                     </Link>
                                     <button className="promo-secondary-btn" onClick={handleClose}>
@@ -132,10 +95,10 @@ const PromoPopup = () => {
                 <button 
                     className="promo-floating-badge" 
                     onClick={handleOpen}
-                    aria-label="عرض برامج وورشات هدى الدقاق"
+                    aria-label="عرض برامج هدى الدقاق"
                 >
                     <Sparkles size={20} className="promo-badge-icon" />
-                    <span className="promo-badge-text">الورشات والبرامج الحالية ✨</span>
+                    <span className="promo-badge-text">رحلة وعي وخلق الواقع ✨</span>
                 </button>
             )}
         </>
