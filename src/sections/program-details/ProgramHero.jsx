@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ProgramHero = ({ data, tickets }) => {
     const whatsappNumber = "212643354739";
-    const defaultMsg = encodeURIComponent(`السلام عليكم كوتش هدى، أود الاستفسار والتسجيل في: ${data.title}`);
+    const defaultMsg = encodeURIComponent(`السلام عليكم ، أود الاستفسار والتسجيل في: ${data.title}`);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMsg}`;
 
     return (
