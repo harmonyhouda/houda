@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PaymentMethods = ({ isFeatured }) => {
+const PaymentMethods = () => {
     const [copied, setCopied] = useState(false);
 
     const ribNumber = "164 640 2111149718360008 59";

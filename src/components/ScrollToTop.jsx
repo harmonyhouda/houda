@@ -20,7 +20,7 @@ const ScrollToTop = () => {
               easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
             });
           } else {
-            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+            const elementPosition = el.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
               top: elementPosition - 100,
               behavior: 'smooth'
