@@ -76,6 +76,9 @@ const PromoPopup = () => {
                                 </p>
 
                                 <div className="promo-actions">
+                                    <button className="promo-secondary-btn" onClick={handleClose}>
+                                        تصفح الموقع أولاً
+                                    </button>
                                     <Link 
                                         to={program.link} 
                                         className="promo-cta-btn"
@@ -84,9 +87,6 @@ const PromoPopup = () => {
                                         <span>{program.btnText}</span>
                                         <ArrowLeft size={18} />
                                     </Link>
-                                    <button className="promo-secondary-btn" onClick={handleClose}>
-                                        تصفح الموقع أولاً
-                                    </button>
                                 </div>
                             </div>
                         </div>
