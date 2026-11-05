@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { X, Sparkles, ArrowLeft } from 'lucide-react';
 
 const PromoPopup = () => {
     // تشغيل / إيقاف العرض: غير القيمة إلى true لتفعيل العرض على الموقع
     const isPromoEnabled = true;
+    const location = useLocation();
 
-    if (!isPromoEnabled) return null;
+    // إخفاء الـ Popup في صفحة الكورس الخاص
+    const isVipSession = location.pathname.startsWith('/vip-session/');
+
+    if (!isPromoEnabled || isVipSession) return null;
 
     const [isVisible, setIsVisible] = useState(false);
     const [showFloatingBadge, setShowFloatingBadge] = useState(false);
