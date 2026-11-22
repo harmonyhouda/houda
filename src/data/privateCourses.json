@@ -123,29 +123,5 @@
         "videoUrl": "https://player.mediadelivery.net/embed/796065/be6bcf75-9655-4d4b-b4d2-d930bea67fb9?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
       }
     ]
-  },
-  {
-    "id": "vip-c04",
-    "accessKey": "taamul-tandif-vip",
-    "title": "تأمل التنظيف",
-    "subtitle": "البوابة الخاصة بالمشتركين // الحصص المسجلة",
-    "description": "جلسة تأمل تنظيف عميق وتفريغ للمشاعر والطاقات المتراكمة، للعودة إلى السكينة والتوازن والسلام الداخلي.",
-    "coverImage": "/service-meditation.png",
-    "curriculum": {
-      "title": "ماذا ستعيشين في تأمل التنظيف؟",
-      "items": [
-        { "title": "التفريغ الطاقي والشعوري", "points": ["تحرير التراكمات والمشاعر العالقة والعودة إلى نقاء وخفة الجسد والروح"] },
-        { "title": "السلام والسكينة الداخلية", "points": ["إعادة التوازن والاتصال بمركز هدوئك الداخلي واسترجاع طاقتك وحضورك"] }
-      ]
-    },
-    "lessons": [
-      {
-        "id": "l01",
-        "number": "01",
-        "title": "تأمل التنظيف",
-        "duration": "",
-        "videoUrl": "https://player.mediadelivery.net/embed/796065/243128bb-9f77-4d89-a90b-55411b78f558?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
-      }
-    ]
   }
 ]
